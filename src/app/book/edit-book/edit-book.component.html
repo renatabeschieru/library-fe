@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Book</h5>
+          <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="onSubmit()" #editBookForm="ngForm">
+            <div class="form-group">
+              <label for="title">Title: </label>
+              <input type="text" id="title" required [(ngModel)]="editBook.title" name="title">
+            </div>
+            <div class="form-group">
+              <label for="author">Author: </label>
+              <input type="text" id="author" required [(ngModel)]="editBook.author" name="author">
+            </div>
+            <div class="form-group">
+              <label for="isbn">ISBN: </label>
+              <input type="text" id="isbn" required [(ngModel)]="editBook.isbn" name="isbn">
+            </div>
+            <div class="form-group">
+              <label for="publicationDate">Publication Date: </label>
+              <input type="date" id="publicationDate" required [(ngModel)]="editBook.publicationDate" name="publicationDate">
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

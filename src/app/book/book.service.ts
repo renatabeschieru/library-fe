@@ -18,6 +18,9 @@ export class BookService {
     public bookEditedSubject = new Subject<void>();
     public bookEdited$ = this.bookEditedSubject.asObservable();
 
+    public searchBookSubject = new Subject<string>();
+    public searchedBook$ = this.searchBookSubject.asObservable();
+
     constructor(
         private httpClient: HttpClient
     ) {}
@@ -36,5 +39,9 @@ export class BookService {
 
     deleteBook(bookId: Number): Observable<void> {
         return this.httpClient.delete<void>(`${this.baseUrl}/${bookId}`);
+    }
+
+    searchBook(searchText: string): Observable<Book[]> {
+        return this.httpClient.get<Book[]>(`${this.baseUrl}/q?author=${searchText}`);
     }
 }

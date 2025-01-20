@@ -39,7 +39,7 @@ export class AddBookComponent implements OnInit, OnDestroy {
     onSubmit() {
         this.bookService.addBook(this.book).subscribe(response => {
             this.bookService.bookAddedSubject.next(response);
-          });
+        });
     }
 
 }

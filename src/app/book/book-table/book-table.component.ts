@@ -50,6 +50,14 @@ export class BookTableComponent implements OnInit, OnDestroy {
                 });
             })
         );
+
+        this.subscription.add(
+            this.bookService.searchedBook$.subscribe((author) => {
+                this.bookService.searchBook(author).subscribe((booksResponse) => {
+                    this.books = booksResponse;
+                });
+            })
+        );
     }
 
     ngOnDestroy(): void {

@@ -10,6 +10,7 @@ import { AddBookComponent } from './book/add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
 import { EditBookComponent } from './book/edit-book/edit-book.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchBookComponent } from './book/search-book/search-book.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     AddBookComponent, 
     EditBookComponent,
+    SearchBookComponent,
   ],
   imports: [
     BrowserModule,

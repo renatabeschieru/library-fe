@@ -1,0 +1,9 @@
+<br>
+<form (ngSubmit)="onSearch()" #bookForm="ngForm" class="inline-form">
+    <div class="form-group">
+        <label for="author">Author: </label>
+        <input type="text" id="author" required [(ngModel)]="author" name="author" class="form-input">
+        <button type="submit" class="form-button">Search</button>
+    </div>
+</form>
+<br>

@@ -21,6 +21,9 @@ export class BookService {
     public searchBookSubject = new Subject<string>();
     public searchedBook$ = this.searchBookSubject.asObservable();
 
+    public countNrOfBooksByAuthor = new Subject<string>();
+    public counted$ = this.countNrOfBooksByAuthor.asObservable();
+
     constructor(
         private httpClient: HttpClient
     ) {}
@@ -43,5 +46,9 @@ export class BookService {
 
     searchBook(searchText: string): Observable<Book[]> {
         return this.httpClient.get<Book[]>(`${this.baseUrl}/q?author=${searchText}`);
+    }
+
+    countByAuthor(author: string): Observable<number> {
+        return this.httpClient.get<number>(`${this.baseUrl}/count-by?author=${author}`);
     }
 }
